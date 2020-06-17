@@ -16,7 +16,7 @@ django + mysql + uwsgi + nginx
 四、部署
 后面有时间再补充
 
-效果图
+五、效果图
 
 ![image](https://github.com/HelloPKJ/foursquare_wx/blob/master/效果图.png)
 
