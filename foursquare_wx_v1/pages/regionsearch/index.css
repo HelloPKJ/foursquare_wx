@@ -1,0 +1,12 @@
+/* pages/regionsearch/index.wxss */
+
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.tag{
+  margin: 15rpx 15rpx 15rpx 15rpx !important;
+}

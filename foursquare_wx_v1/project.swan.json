@@ -1,0 +1,14 @@
+{
+    "host": "baiduboxapp",
+    "projectname": "foursquare_wx_v1",
+    "setting": {
+        "urlCheck": true
+    },
+    "swan": {
+        "baiduboxapp": {
+            "extensionJsVersion": "1.9.2",
+            "swanJsVersion": "3.140.11"
+        }
+    },
+    "appid": "17767960"
+}

@@ -1,0 +1,37 @@
+<view class='container'>
+  <wxs src="../../utils/utils.wxs" module="utils"/>
+  <view class='logo-container'>
+    <image class='logo-img' src="{{about_obj.about_logo}}"></image>
+  </view>
+
+  <view class='address-container'>
+    <view class='dot' />
+    <view class='doc-container'>
+      <text class='address'>{{utils.info_split(about_obj.about_explain,"|",0)}}</text>
+      <text class='doc-txt'>{{utils.info_split(about_obj.about_explain,"|",1)}}</text>
+    </view>
+  </view>
+  <view class='address-container'>
+    <view class='dot' />
+    <view class='doc-container'>
+      <text class='address'>{{utils.info_split(about_obj.about_notice,"|",0)}}</text>
+      <text class='doc-txt'>{{utils.info_split(about_obj.about_notice,"|",1)}}</text>
+    </view>
+  </view>
+  <view class='address-container'>
+    <view class='dot' />
+    <view class='doc-container' bindtap='copyLink'  
+    data-link="{{utils.info_split(about_obj.about_website,'|',1)}}">
+      <text class='address'>{{utils.info_split(about_obj.about_website,"|",0)}}</text>
+      <text class='doc-txt'>{{utils.info_split(about_obj.about_website,"|",1)}}</text>
+    </view>
+  </view>
+   <view class='address-container'>
+    <view class='dot' />
+    <view class='doc-container' bindtap='copyLink'  
+    data-link="{{utils.info_split(about_obj.about_Contact,'|',1)}}">
+      <text class='address'>{{utils.info_split(about_obj.about_Contact,"|",0)}}</text>
+      <text class='doc-txt'>{{utils.info_split(about_obj.about_Contact,"|",1)}}</text>
+    </view>
+  </view>
+</view>

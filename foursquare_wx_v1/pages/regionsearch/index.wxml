@@ -1,0 +1,21 @@
+<!--pages/regionsearch/index.wxml-->
+<content-card name="输入国家全称">
+  <l-search-bar placeholder="搜索" 
+                bind:linconfirm="handleOnSubmit"
+                show-cancel="{{false}}"/>
+</content-card>
+
+<content-card name="热搜国家">
+<view class="container" >
+    <l-tag class="tag" 
+           size="large" 
+           type="touch" 
+           plain="{{true}}"
+           wx:for="{{hot_country_list}}"
+           wx:for-item="hot_country"
+           wx:key="index"
+           bind:lintap="handleOptCountry"
+           name="{{hot_country}}{{hot_country_cn}}"
+           >{{hot_country}}{{hot_country_cn}}</l-tag>
+</view>
+</content-card>

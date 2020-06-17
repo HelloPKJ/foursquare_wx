@@ -1,0 +1,67 @@
+<view class="header">
+  <image class='header-bg' src="{{ad_obj.ads_img}}"></image>
+</view>
+
+<content-card name="基本信息">
+  <view class="details-dec font-break">
+    公司名称：{{customer_obj.customer_company_name_en}}
+  </view>
+  <view class="details-dec font-break">
+    数据来源：{{customer_obj.customer_data_sources_id}}
+  </view>
+  <view class="details-dec font-break">
+    所属行业：{{customer_obj.customer_trades_id}}
+  </view>
+  <view class="details-dec font-break">
+    所属区域：{{customer_obj.customer_region1_cn}}/{{customer_obj.customer_region2_cn}}
+  </view>
+</content-card>
+
+<content-card name="供需信息">
+  <view class="details-dec font-break">
+    供应产品：{{customer_obj.customer_trades_id}}
+  </view>
+  <view class="details-dec font-break">
+    采购需求：{{customer_obj.customer_need_product_cn}}
+  </view>
+</content-card>
+
+<content-card name="联系信息">
+  <view class="details-dec font-break">
+    姓名：{{customer_obj.customer_name}}
+  </view>
+  <view class="details-dec font-break">
+    职务：null
+  </view>
+  <view class="details-dec font-break">
+    官网：{{customer_obj.customer_website}}
+  </view>
+  <view class="details-dec font-break">
+    邮箱：{{customer_obj.customer_email}}
+  </view>
+  <view class="details-dec font-break">
+    传真：{{customer_obj.customer_fax}}
+  </view>
+  <view class="details-dec font-break">
+    电话：{{customer_obj.customer_tel}}
+  </view>
+  <view class="details-dec font-break">
+    邮编：{{customer_obj.customer_post_code}}
+  </view>
+  <view class="details-dec font-break">
+    地址：{{customer_obj.customer_adds_en}}
+  </view>
+</content-card>
+
+<content-card name="其他">
+<view class="container">
+  <l-button type="default" 
+            class="tag" 
+            shape="semicircle"
+            bind:lintap="handleAddPhone">保存</l-button>
+  <!-- <l-button type="default" 
+            class="tag" 
+            shape="semicircle"
+            open-type="share">分享</l-button> -->
+</view>
+</content-card>

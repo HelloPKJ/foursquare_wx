@@ -1,0 +1,87 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <image class='header-bg' src='{{ad_obj.ads_img}}'></image>
+  </view>
+  <content-card class="content" name="搜索条件">
+      <view class="view-container">
+        <l-grid row-num="3" show-row-border="{{true}}">
+          <l-grid-item key="one" slot="one" l-grid-item="grid-item" bind:linitemtap = "handleGirdItemTap">
+            <picker bindchange="bindPicker0Change" range="{{data_source}}">
+              <l-icon name="{{grids1[0].image}}"/>
+              <view class="text ellipsis">来源: {{data_source[data_source_index]}}</view>
+            </picker>
+          </l-grid-item>
+          <l-grid-item key="tow" slot="tow" l-grid-item="grid-item" bind:linitemtap = "handleGirdItemTap">
+            <picker bindchange="bindPicker1Change" range="{{trades}}">
+              <l-icon name="{{grids1[1].image}}"/>
+              <view class="text ellipsis">行业: {{trades[trades_index]}}</view>
+            </picker>
+          </l-grid-item>
+          <l-grid-item key="three" slot="three" l-grid-item="grid-item" bind:linitemtap = "handleGirdItemTap">
+            <l-icon name="{{grids1[2].image}}"/>
+            <view class="text ellipsis">区域: {{country}}</view>
+          </l-grid-item>
+        </l-grid>  
+      </view>
+  </content-card>
+  <!--数据列表-->
+    <l-card  wx:for="{{customers_list}}"
+            wx:for-item="customer"
+            wx:key="index"
+            title="#{{index+1}}：{{customer.customer_company_name_en}}"
+            bind:tap="handleGoDetails"
+            position="right"
+            l-class="shop-card"
+            l-img-class="card-img"
+            l-title-class="card-title" 
+            slot="content"
+            data-id="{{customer}}">
+      <view class="shop-dec">
+        数据来源：{{customer.customer_data_sources_id}}
+      </view>
+      <view class="shop-dec">
+        所属区域：{{customer.customer_region2_cn}}
+      </view>
+      <view class="shop-dec">
+        所属行业：{{customer.customer_trades_id}}
+      </view>
+      <view class="shop-dec">
+        采购需求：{{customer.customer_need_product_cn}}
+      </view>
+      <view class="see-details">
+        点击查看详情
+      </view>
+    </l-card>
+    
+    <block wx:if="{{!has_network}}">
+      <button class="see-more button-size" disabled="true">网络异常，请检查网络连接</button> 
+    </block>
+    <block wx:else>
+      <button wx:if="{{!has_login}}"
+            open-type="getUserInfo"
+            bindgetuserinfo="getUserInfo"
+            class="see-more button-size">点击登陆可查看更多</button>
+      <button wx:else class="see-more button-size" bind:tap="handleSeeMore">{{btn_see_more_text}}</button>
+    </block>
+
+  <l-toast
+    show="{{show_error}}"
+    title="{{error_msg}}"
+    icon="ellipsis"
+    image="../../assets/images/basic/meiyou.png"
+    placement=""
+    duration="1800"
+    center="false"
+    mask="false"
+    l-image-class="img"
+    icon-color="#3963bc"
+  />
+
+  <view>
+    <image src='../../assets/images/basic/gotop.png' class='goTop' hidden='{{!go_top_img}}' bind:tap="goTop"></image>
+  </view>
+  <view>
+    <image src='../../assets/images/basic/gobottom.png' class='goBottom' hidden='{{!go_bottom_img}}' bind:tap="goBottom"></image>
+  </view>
+</view>

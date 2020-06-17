@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <image class='header-bg' src='{{ad_obj.ads_img}}'></image>
+  </view>
+
+  <l-card wx:for="{{evaluation_list}}"
+          wx:for-item="evaluation"
+          wx:key="index"
+          title="{{evaluation.evaluation_title}}"
+          image="{{evaluation.evaluation_img}}"
+          position="right" 
+          l-class="shop-card"
+          l-img-class="card-img"
+          l-title-class="card-title">
+    <view class="shop-dec">
+      {{evaluation.evaluation_content}}
+    </view>
+  </l-card>
+
+  <view>
+  <button open-type="share" class="see-more button-size">分享给好友</button>
+  </view>
+
+</view>
